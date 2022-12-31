@@ -48,6 +48,10 @@ app.set("view engine", "ejs");
 // route prefix
 app.use("", require("./routes/routes"));
 
+app.use("/home", (req, res)=> {
+  res.send("Done")
+})
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
