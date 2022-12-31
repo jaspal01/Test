@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 4000;
 
 // Database Connection
 mongoose.set("strictQuery", true);
+console.log(process.env.DB_URL)
 mongoose.connect(process.env.DB_URL);
 const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
