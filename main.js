@@ -4,6 +4,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
+const MemoryStore = require('memorystore')(session)
 
 const app = express();
 app.set('trust proxy', 1);
@@ -23,6 +24,10 @@ app.use(express.json());
 
 app.use(
   session({
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
     secret: "my secret key",
     saveUninitialized: true,
     resave: false,
