@@ -5,9 +5,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
 
-app.set('trust proxy', 1);
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 4000;
 
 // Database Connection
