@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 4000;
 
 // Database Connection
 mongoose.set("strictQuery", true);
-console.log(process.env.DB_URL || "mongodb+srv://jaspal:jaspal123@cluster0.0lcwkyb.mongodb.net/test")
-mongoose.connect("mongodb://jaspal:jaspal123@cluster0.0lcwkyb.mongodb.net:27017/test&authSource=admin");
+console.log(process.env.DB_URL || "")
+mongoose.connect("mongodb+srv://jaspal:jaspal123@cluster0.0lcwkyb.mongodb.net/test");
 const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to database"));
